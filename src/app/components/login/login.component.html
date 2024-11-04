@@ -1,0 +1,39 @@
+
+<div class="main_container">
+  <div class="container-image">
+      <h1>Registro Telefonico</h1>
+  </div>
+  <div class="form-login">
+      <div class="form-data">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <img class="image_logo" src="assets/images/logo2_app.png" alt="">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="title">Iniciar sesión</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <input type="email" [(ngModel)]="email" class="form-control" placeholder="email">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <input type="password" [(ngModel)]="password" class="form-control" placeholder="contraseña">
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-12 section-button">
+              <button class="btn btn-login" (click)="onLogin()" >Iniciar sesión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
