@@ -1,1 +1,17 @@
-<p>dashbord works!</p>
+<div>
+  <app-navbar class="navbar"></app-navbar>
+
+<div class="container">
+  <div class="show-data">
+    <div *ngIf="newUser">
+      {{ dataEmpresas }}
+    </div>
+    <app-welcome *ngIf="!newUser"></app-welcome>
+  </div>
+</div>
+
+
+
+</div>
+
+

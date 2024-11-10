@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="data-show">
+      <div  [formGroup] = "currentStep">
+
+        <ng-container *ngIf="currentStepIndex === 0" >
+          <div class="row row-form">
+            <div class="img-step-0">
+              <img src="assets/images/welcome_img.png" alt="">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="msg_welcome">
+                <p>
+                  Nos alegra tenerte con nosotros. Tomemos unos minutos para configurar tu cuenta y dar los primeros pasos. Esto es clave para que puedas empezar a crear tus menús personalizados y compartirlos fácilmente con tus clientes. ¡Vamos allá!
+                </p>
+              </div>
+
+            </div>
+          </div>
+          <div class="row">
+            <input type="hidden" id="id_user" formControlName="id_user" [(ngModel)]="id_user">
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="currentStepIndex === 1" >
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="msg_welcome_0">
+                    <h2>
+                      Proporciónanos los Datos del Titular de la Licencia
+                    </h2>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="msg_welcome">
+                  <p>
+                    Para brindarte una mejor experiencia, necesitamos conocer los datos de la persona que adquirió la licencia de nuestra plataforma. Esto nos ayudará a personalizar el servicio y ofrecerte el soporte que necesitas.
+
+                    Por favor, tómate un momento para completar la siguiente información. ¡Gracias por tu colaboración!
+                  </p>
+                </div>
+              </div>
+            </div>
+              <div class="row  row-form_steps">
+                <div class="col-md-12">
+                  <label for="firstName">¿Cual es tu nombre(s)?</label>
+                  <input class="form-control" id="firstName" formControlName="firstName">
+                </div>
+              </div>
+
+              <div class="row row-form_steps">
+                <div class="col-md-12">
+                  <label for="lastNameP">¿Como te apellidas? (Paterno)</label>
+                  <input id="lastNameP" formControlName="lastNameP">
+                </div>
+              </div>
+
+              <div class="row row-form_steps">
+                <div class="col-md-12">
+                  <label for="lastNameM">¿Como te apellidas? (Materno)</label>
+                  <input type="text" id="lastNameM" formControlName="lastNameM">
+                </div>
+              </div>
+
+              <div class="row row-form_steps">
+                <div class="col-md-12">
+                  <label for="phone">¿Cuál es tu número telefónico de contacto?</label>
+                  <input type="text" id="phone" formControlName="phone">
+                </div>
+              </div>
+
+              <div class="row row-form_steps">
+                <div class="col-md-12">
+                  <label for="birthdate">¿Cuál es tu fecha de nacimiento?</label>
+                  <input type="date" id="birthdate" formControlName="birthdate">
+                </div>
+              </div>
+
+
+
+          </div>
+
+        </ng-container>
+
+        <ng-container *ngIf="currentStepIndex === 2">
+          <label for="address">Address</label>
+          <input id="address" formControlName="address">
+          <label for="city">City</label>
+          <input id="city" formControlName="city">
+          <label for="country">Country</label>
+          <input id="country" formControlName="country">
+        </ng-container>
+
+
+
+      </div>
+      <div class="container-buttons">
+        <button (click)="previousStep()" [disabled]="currentStepIndex === 0 ">Anterior</button>
+        <button style="float: right;" *ngIf="currentStepIndex <= steps.length - 1 " (click)="nextStep()">Siguiente</button>
+
+
+      </div>
+
+
+  </div>
+</div>

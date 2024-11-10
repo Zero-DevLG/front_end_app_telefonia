@@ -1,5 +1,15 @@
-*
-{
-  padding: 0;
+html, body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+section{
+  background:
+  linear-gradient(rgba(206, 206, 206, 0.5), rgba(102, 130, 135, 0.5)),
+  url('../../public/assets/images/background_app.png');
+  background-size: cover;
+  // height: calc(100vh - 80px);
 }

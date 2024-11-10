@@ -24,7 +24,18 @@ export class SocketService {
     this.socket.on('Nueva conexion', (data)=>{
       console.log('Listening event from WebSocketServer');
       console.log(data);
+
     });
+
+    this.socket.on('data_user', (data)=>{
+      console.log('Listening event from WebSocketServer');
+      console.log(data);
+
+    });
+
+
+
+
   }
 
   // Method to send message to the server
@@ -34,9 +45,9 @@ export class SocketService {
   }
 
    //Method to subscribe on events from the server
-   onEvent(eventName: string){
-    return new Observable(observer => {
-      this.socket.on(eventName, (data) =>{
+   onEvent<T>(eventName: string):Observable<T>{
+    return new Observable<T>(observer => {
+      this.socket.on(eventName, (data : T) =>{
         observer.next(data);
       });
 
